@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
-from . import models
+from models import *
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -28,7 +28,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
 class TaskAdmin(admin.ModelAdmin):
     list_display = ['name', 'is_done', 'deadline', 'project', 'owner', 'created_at']
-    list_filter = ['is_done', 'deadline', 'created_at']
+    list_filter = ['is_done', 'owner','deadline', 'created_at']
     search_fields = ['name', 'description', 'project__name', 'owner__last_name', 'owner__username']
     list_editable = ['is_done']
     readonly_fields = ['created_at', 'updated_at', 'id']

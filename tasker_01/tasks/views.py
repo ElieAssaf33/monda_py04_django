@@ -13,14 +13,14 @@ def index(request: HttpRequest) -> HttpResponse:
 
 
 def task_list(request: HttpRequest) -> HttpResponse:
-    return render(request, 'tasks/task_list.html', {
+    return render(request, 'task/task_list.html', {
         'task_list': models.Task.objects.all()
     })
 
 
 def task_detail(request: HttpRequest, pk:int) -> HttpResponse:
-    return render(request, 'tasks/task_detail.html', {
-        'task': get_object_or_404(models.Task, pk=pk)
+    return render(request, 'task/task_detail.html', {
+        'tasks/task_detail': get_object_or_404(models.Task, pk=pk)
     })
 
 def task_done(request: HttpRequest, pk:int) -> HttpResponse:
