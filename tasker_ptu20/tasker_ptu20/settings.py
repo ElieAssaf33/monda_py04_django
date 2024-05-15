@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'tasks',
     'user_profile',
+    'customer_support',
     'tinymce',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -150,6 +151,9 @@ TINYMCE_DEFAULT_CONFIG = {
                "ltr rtl | showcomments addcomment code",
     "custom_undo_redo_levels": 10,
 }
+
+ADMIN_EMAIL = "kestas@midonow.fi"
+ADMIN_NAME = "Customer Support"
 
 try:
     from .local_settings import *
